@@ -27,7 +27,7 @@ exports.requestPasswordReset = async (req, res) => {
         // Generar un token temporal (válido por 1 hora)
         const resetToken = jwt.sign({ id: user.id }, secretKey, { expiresIn: '1h' });
         // Crear el enlace de recuperación
-        const resetLink = `http://localhost:4200/accounts/reset-password/reset-password-1?token=${resetToken}`;
+        const resetLink = `http://zerver.angel.lat/angular-app/accounts/reset-password/reset-password-1?token=${resetToken}`;
         // Enviar correo
         await transporter.sendMail({
             from: 'fernando.garcia131103@gmail.com',
